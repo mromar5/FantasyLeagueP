@@ -18,13 +18,28 @@ public class Database {
     File databaseFolder = new File("Database");
     File usersFolder = new File(databaseFolder.getAbsolutePath() + File.separator + "Users");
     File leaguesFolder = new File(databaseFolder.getAbsolutePath() + File.separator + "Leagues");
+    File playersFolder = new File(databaseFolder.getAbsolutePath() + File.separator + "Players");
     public Database()
     {
     	if(!databaseFolder.isDirectory()) {databaseFolder.mkdir();}
         if(!usersFolder.isDirectory()){usersFolder.mkdir();}
         if(!leaguesFolder.isDirectory()){leaguesFolder.mkdir();}
+        if(!playersFolder.isDirectory()){playersFolder.mkdir();}
     }
+    public void addPlayer(Player player) throws IOException{  
+          File playerInfo = new File (playersFolder.getAbsolutePath() + File.separator + player.Name + ".txt");
+          playerInfo.createNewFile();
+          BufferedWriter br = new BufferedWriter(new FileWriter(playerInfo));
+          br.append("Name: " + player.Name +"\r\nNationality: " + player.Nationality + "\r\nClub: " + player.Club + "\r\nPosition: " + player.Position + "\r\nPrice: " + player.Price + "\r\nYellow Card: " + player.YellowCard + "\r\nRed Card: " + player.RedCard).flush();
+          br.close();
     
+    }
+    public void addSquadPlayerDatabase(Squad squad, Player player, File SquadPlayersFile) throws IOException{  
+          BufferedWriter br = new BufferedWriter(new FileWriter(SquadPlayersFile));
+          br.append("Name: " + player.Name +"\r\nNationality: " + player.Nationality + "\r\nClub: " + player.Club + "\r\nPosition: " + player.Position + "\r\nPrice: " + player.Price + "\r\nYellow Card: " + player.YellowCard + "\r\nRed Card: " + player.RedCard).flush();
+          br.close();
+    
+    }
     public void addLeague(){};
     public void removeLeague(){};
     public void addUser(User user) throws IOException{
