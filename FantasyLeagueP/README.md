@@ -1,2 +1,0 @@
-# FantasyLeague
-Software architecture
