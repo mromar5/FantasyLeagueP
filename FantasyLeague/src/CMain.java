@@ -60,6 +60,7 @@ public class CMain {
                                     System.out.println("Enter player's price: ");
                                     double playerPrice = scan.nextDouble();
                                     scan.nextLine();
+
                                     PlayerController pc = new PlayerController();
                                     pc.addPlayer(playerName, playerNationality, playerClub, playerPosition, playerPrice);
                                     break;

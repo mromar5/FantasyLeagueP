@@ -10,8 +10,8 @@ public class Active {
 	public Active(User user) throws IOException
 	{
 		CurrentUser=user;
-//                squad = new Squad("Database" + File.separator + "Users" + File.separator + CurrentUser.email + File.separator + "Squad List.txt");
                 squad = new Squad("Database" + File.separator + "Users" + File.separator + CurrentUser.email + File.separator + "Squad List.txt","Database" + File.separator + "Users" + File.separator + CurrentUser.email + File.separator + "Budget.txt");
+
                 squadcontroller = new SquadController(squad);
 	}
 }
