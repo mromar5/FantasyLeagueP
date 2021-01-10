@@ -1,30 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author dell
- */
-public class User implements IObserver {
+public  class User{
   
         String firstName, lastName;
         String email;
         String password;
         String favouriteClub;
-        
-       User(String firstName_, String lastName_, String email_, String password_, String favouriteClub_){
+        protected String type;
+       User(String firstName_, String lastName_, String email_, String password_, String favouriteClub_, String type){
            firstName = firstName_;
            lastName = lastName_;
            email = email_;
            password = password_;
            favouriteClub = favouriteClub_;
-           
-       
-       }
-       
+           this.type = type;
+       }  
        public String getFirstName(){
            return firstName;
        }
@@ -41,20 +29,10 @@ public class User implements IObserver {
        public String getFavouriteClub(){
            return favouriteClub;
        }
-       
-       
+       public String getType(){
+           return type;
+       }
     User() {
       //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-        
-        
-        
-    @Override
-    public void update() {
-       
-        //Implementation related to the Subject (League)
-        
-     //   throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
